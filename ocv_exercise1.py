@@ -8,16 +8,16 @@ from matplotlib import pyplot as plt
 # Loading/Saving/Data
 #---------------------------
 
-# Load a color image in grayscale
+# Load a color image (BGR)
 img = cv.imread('/Users/csb/Projects/OpenCV-Practice/Example-Images/surly-bike.jpg',cv.IMREAD_COLOR)
 # Show image size (heigh, width, channels (if color))
-print("Image Size")
+print("Image Size and Color Channels")
 print(img.shape)
 #S how image data type
 print("Image Data Type")
 print(img.dtype)
 # Show number of pixels
-print("Number of Pixels")
+print("Number of Elements (3 elements per pixel if BGR/RGB)")
 print(img.size)
 # Give the window a title
 cv.imshow("Name of Picture",img)
@@ -41,19 +41,19 @@ print("Pixel value of entire row 50 (all columns)")
 print(img[50,:])
 
 # Areas of image that match channel appear brighter
-# Show red channel/plane
-red_img = img[:,:,0]
-cv.imshow("Red Picture",red_img)
-cv.waitKey(0)
-cv.destroyAllWindows()
 # Show blue channel/plane
-blue_img = img[:,:,1]
+blue_img = img[:,:,0]
 cv.imshow("Blue Picture",blue_img)
 cv.waitKey(0)
 cv.destroyAllWindows()
 # Show green channel/plane
-green_img = img[:,:,2]
+green_img = img[:,:,1]
 cv.imshow("Green Picture",green_img)
+cv.waitKey(0)
+cv.destroyAllWindows()
+# Show red channel/plane
+red_img = img[:,:,2]
+cv.imshow("Red Picture",red_img)
 cv.waitKey(0)
 cv.destroyAllWindows()
 
