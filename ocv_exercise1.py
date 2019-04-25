@@ -1,6 +1,7 @@
 import numpy as np 
 import cv2 as cv 
 from matplotlib import pyplot as plt
+import random
 
 # A simple reference for OpenCV functions and Matplotlib
 
@@ -13,7 +14,7 @@ img = cv.imread('/Users/csb/Projects/OpenCV-Practice/Example-Images/surly-bike.j
 # Show image size (heigh, width, channels (if color))
 print("Image Size and Color Channels")
 print(img.shape)
-#S how image data type
+# Show image data type
 print("Image Data Type")
 print(img.dtype)
 # Show number of pixels
@@ -97,3 +98,7 @@ cv.imshow("Cropped Image",cropped_img)
 cv.waitKey(0)
 cv.destroyAllWindows()
 
+# Introduce noise in an image
+
+noise = np.random.rand(1,100)
+print(noise)
